@@ -11,6 +11,7 @@ from io import BytesIO
 import torch
 import diffusers
 
+from service import cos
 
 ##################################################
 # Utils
@@ -59,7 +60,7 @@ class EngineStableDiffusion(Engine):
     def __init__(self, pipe, sibling=None, custom_model_path=None, requires_safety_checker=True):
         super().__init__()
         if sibling == None:
-            self.engine = pipe.from_pretrained( 'runwayml/stable-diffusion-v1-5', use_auth_token=hf_token.strip() )
+            self.engine = pipe.from_pretrained( './stable-diffusion-v1-5' )
         elif custom_model_path:
             if requires_safety_checker:
                 self.engine = diffusers.StableDiffusionPipeline.from_pretrained(custom_model_path,
@@ -216,12 +217,16 @@ def _generate(task, engine=None):
         output_data[ 'status' ] = 'success'
         images = []
         for result in total_results:
-            images.append({
-                'base64' : pil_to_b64( result['image'].convert( 'RGB' ) ),
+            imgBase64 = pil_to_b64( result['image'].convert( 'RGB' ) )
+            imgByte = base64.b64decode(imgBase64)
+            url = cos.upload_to_cos(imgByte)
+            aigcRes = {
+                'image_url':url,
                 'seed' : result['seed'],
                 'mime_type': 'image/png',
                 'nsfw': result['nsfw']
-            })
+            }
+            images.append(aigcRes)
         output_data[ 'images' ] = images        
     except RuntimeError as e:
         output_data[ 'status' ] = 'failure'

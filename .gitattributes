@@ -1,0 +1,14 @@
+stable-diffusion-v1-5/feature_extractor filter=lfs diff=lfs merge=lfs -text
+stable-diffusion-v1-5/text_encoder filter=lfs diff=lfs merge=lfs -text
+stable-diffusion-v1-5/unet filter=lfs diff=lfs merge=lfs -text
+stable-diffusion-v1-5/v1-5-pruned-emaonly.safetensors filter=lfs diff=lfs merge=lfs -text
+stable-diffusion-v1-5/vae filter=lfs diff=lfs merge=lfs -text
+stable-diffusion-v1-5/README.md filter=lfs diff=lfs merge=lfs -text
+stable-diffusion-v1-5/v1-5-pruned.ckpt filter=lfs diff=lfs merge=lfs -text
+stable-diffusion-v1-5/v1-5-pruned-emaonly.ckpt filter=lfs diff=lfs merge=lfs -text
+stable-diffusion-v1-5/v1-inference.yaml filter=lfs diff=lfs merge=lfs -text
+stable-diffusion-v1-5/model_index.json filter=lfs diff=lfs merge=lfs -text
+stable-diffusion-v1-5/safety_checker filter=lfs diff=lfs merge=lfs -text
+stable-diffusion-v1-5/scheduler filter=lfs diff=lfs merge=lfs -text
+stable-diffusion-v1-5/tokenizer filter=lfs diff=lfs merge=lfs -text
+stable-diffusion-v1-5/v1-5-pruned.safetensors filter=lfs diff=lfs merge=lfs -text

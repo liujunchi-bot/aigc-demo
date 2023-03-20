@@ -1,0 +1,190 @@
+*** Starting uWSGI 2.0.21 (64bit) on [Sun Mar 19 20:52:05 2023] ***
+compiled with version: 11.2.0 on 10 March 2023 16:38:03
+os: Linux-4.18.0-348.7.1.el8_5.x86_64 #1 SMP Wed Dec 22 13:25:12 UTC 2021
+nodename: VM-0-10-centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 96
+current working directory: /home/aigc/stable-diffusion-api-server
+detected binary path: /opt/anaconda3/envs/sd-api-server/bin/uwsgi
+chdir() to /home/aigc/stable-diffusion-api-server
+your processes number limit is 1541253
+your memory page size is 4096 bytes
+detected max file descriptor number: 100001
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:1337 fd 6
+Python version: 3.8.16 (default, Mar  2 2023, 03:21:46)  [GCC 11.2.0]
+Set PythonHome to /opt/anaconda3/envs/sd-api-server
+Python main interpreter initialized at 0x209a730
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416880 bytes (407 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /opt/anaconda3/envs/sd-api-server/lib/python3.8/site-packages/ to pythonpath.
+INFO:qcloud_cos.cos_client:generate built-in connection pool success. maxsize=10,10
+ftfy or spacy is not installed using BERT BasicTokenizer instead of ftfy.
+WSGI app 0 (mountpoint='') ready in 7 seconds on interpreter 0x209a730 pid: 1078685 (default app)
+mountpoint  already configured. skip.
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1078685)
+spawned uWSGI worker 1 (pid: 1078796, cores: 2)
+spawned uWSGI worker 2 (pid: 1078804, cores: 2)
+spawned uWSGI worker 3 (pid: 1078812, cores: 2)
+spawned uWSGI worker 4 (pid: 1078820, cores: 2)
+*** Stats server enabled on 127.0.0.1:9191 fd: 21 ***
+[pid: 1078820|app: 0|req: 1/1] 49.7.199.16 () {38 vars in 500 bytes} [Sun Mar 19 20:52:36 2023] GET /ping => generated 21 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+[pid: 1078812|app: 0|req: 1/2] 49.7.199.164 () {38 vars in 501 bytes} [Sun Mar 19 20:57:17 2023] GET /ping => generated 21 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+[pid: 1078804|app: 0|req: 1/3] 49.7.199.164 () {38 vars in 501 bytes} [Sun Mar 19 20:57:18 2023] GET /ping => generated 21 bytes in 2 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 0)
+[pid: 1078812|app: 0|req: 2/4] 49.7.199.164 () {38 vars in 501 bytes} [Sun Mar 19 20:57:20 2023] GET /ping => generated 21 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 1)
+[pid: 1078820|app: 0|req: 2/5] 49.7.199.164 () {38 vars in 501 bytes} [Sun Mar 19 20:57:22 2023] GET /ping => generated 21 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 1)
+[pid: 1078820|app: 0|req: 4/6] 49.7.199.224 () {38 vars in 501 bytes} [Sun Mar 19 21:09:06 2023] GET /ping => generated 21 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 1)
+  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [00:02<01:06,  2.28s/it]  7%|▋         | 2/30 [00:03<00:42,  1.53s/it] 10%|█         | 3/30 [00:04<00:34,  1.29s/it] 13%|█▎        | 4/30 [00:05<00:30,  1.17s/it] 17%|█▋        | 5/30 [00:06<00:27,  1.10s/it] 20%|██        | 6/30 [00:07<00:25,  1.06s/it] 23%|██▎       | 7/30 [00:08<00:24,  1.05s/it] 27%|██▋       | 8/30 [00:09<00:22,  1.02s/it] 30%|███       | 9/30 [00:10<00:21,  1.01s/it] 33%|███▎      | 10/30 [00:11<00:19,  1.00it/s] 37%|███▋      | 11/30 [00:12<00:18,  1.01it/s] 40%|████      | 12/30 [00:13<00:17,  1.01it/s] 43%|████▎     | 13/30 [00:14<00:16,  1.01it/s] 47%|████▋     | 14/30 [00:15<00:15,  1.02it/s] 50%|█████     | 15/30 [00:16<00:14,  1.02it/s] 53%|█████▎    | 16/30 [00:17<00:13,  1.02it/s] 57%|█████▋    | 17/30 [00:18<00:12,  1.01it/s] 60%|██████    | 18/30 [00:19<00:11,  1.00it/s] 63%|██████▎   | 19/30 [00:20<00:10,  1.01it/s] 67%|██████▋   | 20/30 [00:21<00:09,  1.01it/s] 70%|███████   | 21/30 [00:22<00:08,  1.01it/s] 73%|███████▎  | 22/30 [00:23<00:07,  1.01it/s] 77%|███████▋  | 23/30 [00:23<00:06,  1.02it/s] 80%|████████  | 24/30 [00:24<00:05,  1.02it/s] 83%|████████▎ | 25/30 [00:25<00:04,  1.02it/s] 87%|████████▋ | 26/30 [00:26<00:03,  1.02it/s] 90%|█████████ | 27/30 [00:27<00:02,  1.01it/s] 93%|█████████▎| 28/30 [00:28<00:01,  1.01it/s] 97%|█████████▋| 29/30 [00:29<00:00,  1.01it/s]100%|██████████| 30/30 [00:30<00:00,  1.01it/s]100%|██████████| 30/30 [00:30<00:00,  1.03s/it]
+INFO:qcloud_cos.cos_client:put object, url=:https://20230312-1312414016.cos.ap-guangzhou.myqcloud.com/5bb7360c88667a56f7595865ef4e0ea8 ,headers=:{'Content-Type': 'image/png; charset=utf-8'}
+https://20230312-1312414016.cos.ap-guangzhou.myqcloud.com/5bb7360c88667a56f7595865ef4e0ea8
+[pid: 1078804|app: 0|req: 2/7] 49.7.199.224 () {42 vars in 715 bytes} [Sun Mar 19 21:09:41 2023] POST /txt2img => generated 203 bytes in 32608 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 1)
+[pid: 1078820|app: 0|req: 5/8] 193.111.250.222 () {40 vars in 567 bytes} [Sun Mar 19 21:33:37 2023] GET / => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 1078812|app: 0|req: 3/9] 92.118.39.82 () {28 vars in 307 bytes} [Sun Mar 19 21:37:56 2023] GET / => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 1078820|app: 0|req: 6/10] 45.79.168.172 () {34 vars in 391 bytes} [Sun Mar 19 22:02:11 2023] GET / => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 1078820|app: 0|req: 7/11] 157.245.240.161 () {34 vars in 483 bytes} [Sun Mar 19 22:07:54 2023] GET / => generated 207 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 1078812|app: 0|req: 4/12] 157.245.240.161 () {34 vars in 519 bytes} [Sun Mar 19 22:07:54 2023] GET /client/get_targets => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 1078820|app: 0|req: 8/13] 157.245.240.161 () {34 vars in 397 bytes} [Sun Mar 19 22:07:55 2023] GET /upl.php => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 1078812|app: 0|req: 5/14] 220.196.160.124 () {42 vars in 671 bytes} [Sun Mar 19 22:11:39 2023] GET /upl.php => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 1078820|app: 0|req: 9/15] 92.118.39.82 () {28 vars in 307 bytes} [Sun Mar 19 22:21:51 2023] GET / => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 1078820|app: 0|req: 10/16] 34.76.158.233 () {42 vars in 561 bytes} [Sun Mar 19 22:57:47 2023] GET / => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 1078820|app: 0|req: 11/17] 180.101.245.251 () {42 vars in 678 bytes} [Sun Mar 19 23:14:21 2023] GET /ping => generated 21 bytes in 0 msecs (HTTP/1.1 200) 2 headers in 71 bytes (1 switches on core 1)
+[pid: 1078820|app: 0|req: 12/18] 193.32.162.159 () {44 vars in 779 bytes} [Sun Mar 19 23:40:21 2023] GET / => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 1078820|app: 0|req: 13/19] 59.83.208.108 () {42 vars in 791 bytes} [Mon Mar 20 00:13:31 2023] GET /client/get_targets => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 1078812|app: 0|req: 6/20] 31.214.243.99 () {40 vars in 565 bytes} [Mon Mar 20 00:41:14 2023] GET / => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 1)
+  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [00:39<18:58, 39.25s/it]  7%|▋         | 2/30 [00:58<12:52, 27.60s/it] 10%|█         | 3/30 [01:18<10:44, 23.87s/it] 13%|█▎        | 4/30 [01:37<09:35, 22.12s/it] 17%|█▋        | 5/30 [01:56<08:48, 21.15s/it] 20%|██        | 6/30 [02:16<08:16, 20.69s/it] 23%|██▎       | 7/30 [02:36<07:47, 20.34s/it] 27%|██▋       | 8/30 [02:56<07:22, 20.11s/it] 30%|███       | 9/30 [03:15<06:59, 19.96s/it] 33%|███▎      | 10/30 [03:35<06:37, 19.87s/it] 37%|███▋      | 11/30 [03:55<06:16, 19.82s/it] 40%|████      | 12/30 [04:14<05:56, 19.78s/it] 43%|████▎     | 13/30 [04:34<05:35, 19.76s/it] 47%|████▋     | 14/30 [04:54<05:15, 19.74s/it] 50%|█████     | 15/30 [05:13<04:55, 19.73s/it] 53%|█████▎    | 16/30 [05:33<04:35, 19.71s/it] 57%|█████▋    | 17/30 [05:53<04:16, 19.71s/it] 60%|██████    | 18/30 [06:12<03:56, 19.70s/it] 63%|██████▎   | 19/30 [06:32<03:36, 19.70s/it] 67%|██████▋   | 20/30 [06:52<03:17, 19.71s/it] 70%|███████   | 21/30 [07:11<02:57, 19.70s/it] 73%|███████▎  | 22/30 [07:31<02:37, 19.70s/it] 77%|███████▋  | 23/30 [07:51<02:17, 19.70s/it] 80%|████████  | 24/30 [08:11<01:58, 19.69s/it] 83%|████████▎ | 25/30 [08:30<01:38, 19.66s/it] 87%|████████▋ | 26/30 [08:50<01:18, 19.64s/it] 90%|█████████ | 27/30 [09:09<00:58, 19.63s/it] 93%|█████████▎| 28/30 [09:29<00:39, 19.62s/it] 97%|█████████▋| 29/30 [09:49<00:19, 19.62s/it]100%|██████████| 30/30 [10:08<00:00, 19.62s/it]100%|██████████| 30/30 [10:08<00:00, 20.29s/it]
+  0%|          | 0/13 [00:00<?, ?it/s]INFO:qcloud_cos.cos_client:put object, url=:https://20230312-1312414016.cos.ap-guangzhou.myqcloud.com/adf60e201ac0d436449fece1bcf401ab ,headers=:{'Content-Type': 'image/png; charset=utf-8'}
+https://20230312-1312414016.cos.ap-guangzhou.myqcloud.com/adf60e201ac0d436449fece1bcf401ab
+[pid: 1078812|app: 0|req: 8/21] 49.7.199.243 () {42 vars in 858 bytes} [Mon Mar 20 01:17:29 2023] POST /txt2img => generated 204 bytes in 635644 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 1)
+  8%|▊         | 1/13 [00:39<07:51, 39.29s/it] 15%|█▌        | 2/13 [00:58<05:03, 27.60s/it] 23%|██▎       | 3/13 [01:18<03:58, 23.85s/it] 31%|███       | 4/13 [01:37<03:19, 22.12s/it] 38%|███▊      | 5/13 [01:57<02:49, 21.15s/it] 46%|████▌     | 6/13 [02:16<02:23, 20.56s/it] 54%|█████▍    | 7/13 [02:35<02:01, 20.19s/it] 62%|██████▏   | 8/13 [02:55<01:39, 19.94s/it] 69%|██████▉   | 9/13 [03:14<01:19, 19.77s/it] 77%|███████▋  | 10/13 [03:34<00:58, 19.66s/it] 85%|████████▍ | 11/13 [03:53<00:39, 19.59s/it] 92%|█████████▏| 12/13 [04:12<00:19, 19.55s/it]100%|██████████| 13/13 [04:32<00:00, 19.52s/it]100%|██████████| 13/13 [04:32<00:00, 20.95s/it]
+INFO:qcloud_cos.cos_client:put object, url=:https://20230312-1312414016.cos.ap-guangzhou.myqcloud.com/c02834ce192483de65eabf32ec12c693 ,headers=:{'Content-Type': 'image/png; charset=utf-8'}
+https://20230312-1312414016.cos.ap-guangzhou.myqcloud.com/c02834ce192483de65eabf32ec12c693
+[pid: 1078820|app: 0|req: 14/22] 49.7.199.124 () {42 vars in 858 bytes} [Mon Mar 20 01:28:03 2023] POST /txt2img => generated 203 bytes in 299477 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 1)
+  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [00:38<18:46, 38.83s/it]  7%|▋         | 2/30 [00:58<12:47, 27.40s/it] 10%|█         | 3/30 [01:17<10:41, 23.75s/it] 13%|█▎        | 4/30 [01:37<09:32, 22.03s/it] 17%|█▋        | 5/30 [01:56<08:47, 21.08s/it] 20%|██        | 6/30 [02:15<08:12, 20.52s/it] 23%|██▎       | 7/30 [02:35<07:43, 20.15s/it] 27%|██▋       | 8/30 [02:54<07:19, 19.95s/it] 30%|███       | 9/30 [03:14<06:57, 19.89s/it] 33%|███▎      | 10/30 [03:34<06:36, 19.84s/it] 37%|███▋      | 11/30 [03:54<06:16, 19.81s/it] 40%|████      | 12/30 [04:13<05:56, 19.79s/it] 43%|████▎     | 13/30 [04:33<05:36, 19.77s/it] 47%|████▋     | 14/30 [04:53<05:16, 19.76s/it] 50%|█████     | 15/30 [05:12<04:56, 19.76s/it] 53%|█████▎    | 16/30 [05:32<04:36, 19.75s/it] 57%|█████▋    | 17/30 [05:52<04:16, 19.75s/it] 60%|██████    | 18/30 [06:12<03:56, 19.74s/it] 63%|██████▎   | 19/30 [06:31<03:37, 19.74s/it] 67%|██████▋   | 20/30 [06:51<03:17, 19.73s/it] 70%|███████   | 21/30 [07:11<02:57, 19.74s/it] 73%|███████▎  | 22/30 [07:31<02:37, 19.73s/it] 77%|███████▋  | 23/30 [07:50<02:18, 19.74s/it] 80%|████████  | 24/30 [08:10<01:58, 19.74s/it] 83%|████████▎ | 25/30 [08:30<01:38, 19.74s/it] 87%|████████▋ | 26/30 [08:50<01:18, 19.74s/it] 90%|█████████ | 27/30 [09:09<00:59, 19.74s/it] 93%|█████████▎| 28/30 [09:29<00:39, 19.74s/it] 97%|█████████▋| 29/30 [09:49<00:19, 19.74s/it]100%|██████████| 30/30 [10:09<00:00, 19.74s/it]100%|██████████| 30/30 [10:09<00:00, 20.30s/it]
+INFO:qcloud_cos.cos_client:put object, url=:https://20230312-1312414016.cos.ap-guangzhou.myqcloud.com/dfbfcacbe380e2c9782c0f89fe81c278 ,headers=:{'Content-Type': 'image/png; charset=utf-8'}
+https://20230312-1312414016.cos.ap-guangzhou.myqcloud.com/dfbfcacbe380e2c9782c0f89fe81c278
+[pid: 1078820|app: 0|req: 15/23] 49.7.199.26 () {42 vars in 857 bytes} [Mon Mar 20 01:33:24 2023] POST /txt2img => generated 204 bytes in 635866 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 1)
+*** Starting uWSGI 2.0.21 (64bit) on [Mon Mar 20 02:01:54 2023] ***
+compiled with version: 11.2.0 on 10 March 2023 16:38:03
+os: Linux-4.18.0-348.7.1.el8_5.x86_64 #1 SMP Wed Dec 22 13:25:12 UTC 2021
+nodename: VM-0-10-centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 96
+current working directory: /home/aigc/stable-diffusion-api-server
+detected binary path: /opt/anaconda3/envs/sd-api-server/bin/uwsgi
+chdir() to /home/aigc/stable-diffusion-api-server
+your processes number limit is 1541253
+your memory page size is 4096 bytes
+detected max file descriptor number: 100001
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:1337 fd 6
+Python version: 3.8.16 (default, Mar  2 2023, 03:21:46)  [GCC 11.2.0]
+Set PythonHome to /opt/anaconda3/envs/sd-api-server
+Python main interpreter initialized at 0x212b520
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 5703264 bytes (5569 KB) for 400 cores
+*** Operational MODE: preforking+threaded ***
+added /opt/anaconda3/envs/sd-api-server/lib/python3.8/site-packages/ to pythonpath.
+INFO:qcloud_cos.cos_client:generate built-in connection pool success. maxsize=10,10
+ftfy or spacy is not installed using BERT BasicTokenizer instead of ftfy.
+WSGI app 0 (mountpoint='') ready in 7 seconds on interpreter 0x212b520 pid: 1213858 (default app)
+mountpoint  already configured. skip.
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1213858)
+spawned uWSGI worker 1 (pid: 1214038, cores: 20)
+spawned uWSGI worker 2 (pid: 1214064, cores: 20)
+spawned uWSGI worker 3 (pid: 1214090, cores: 20)
+spawned uWSGI worker 4 (pid: 1214116, cores: 20)
+spawned uWSGI worker 5 (pid: 1214142, cores: 20)
+spawned uWSGI worker 6 (pid: 1214168, cores: 20)
+spawned uWSGI worker 7 (pid: 1214194, cores: 20)
+spawned uWSGI worker 8 (pid: 1214220, cores: 20)
+spawned uWSGI worker 9 (pid: 1214246, cores: 20)
+spawned uWSGI worker 10 (pid: 1214272, cores: 20)
+spawned uWSGI worker 11 (pid: 1214298, cores: 20)
+spawned uWSGI worker 12 (pid: 1214324, cores: 20)
+spawned uWSGI worker 13 (pid: 1214350, cores: 20)
+spawned uWSGI worker 14 (pid: 1214376, cores: 20)
+spawned uWSGI worker 15 (pid: 1214402, cores: 20)
+spawned uWSGI worker 16 (pid: 1214428, cores: 20)
+spawned uWSGI worker 17 (pid: 1214454, cores: 20)
+spawned uWSGI worker 18 (pid: 1214480, cores: 20)
+spawned uWSGI worker 19 (pid: 1214506, cores: 20)
+spawned uWSGI worker 20 (pid: 1214532, cores: 20)
+*** Stats server enabled on 127.0.0.1:9191 fd: 53 ***
+  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [00:39<19:03, 39.44s/it]  7%|▋         | 2/30 [00:59<12:58, 27.79s/it] 10%|█         | 3/30 [01:18<10:48, 24.04s/it] 13%|█▎        | 4/30 [01:38<09:39, 22.27s/it] 17%|█▋        | 5/30 [01:57<08:53, 21.34s/it] 20%|██        | 6/30 [02:17<08:16, 20.71s/it] 23%|██▎       | 7/30 [02:36<07:46, 20.27s/it] 27%|██▋       | 8/30 [02:56<07:19, 19.99s/it]*** Starting uWSGI 2.0.21 (64bit) on [Mon Mar 20 02:08:05 2023] ***
+compiled with version: 11.2.0 on 10 March 2023 16:38:03
+os: Linux-4.18.0-348.7.1.el8_5.x86_64 #1 SMP Wed Dec 22 13:25:12 UTC 2021
+nodename: VM-0-10-centos
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 96
+current working directory: /home/aigc/stable-diffusion-api-server
+detected binary path: /opt/anaconda3/envs/sd-api-server/bin/uwsgi
+chdir() to /home/aigc/stable-diffusion-api-server
+your processes number limit is 1541253
+your memory page size is 4096 bytes
+detected max file descriptor number: 100001
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:1337 fd 6
+Python version: 3.8.16 (default, Mar  2 2023, 03:21:46)  [GCC 11.2.0]
+Set PythonHome to /opt/anaconda3/envs/sd-api-server
+Python main interpreter initialized at 0x24de710
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2256864 bytes (2203 KB) for 150 cores
+*** Operational MODE: preforking+threaded ***
+added /opt/anaconda3/envs/sd-api-server/lib/python3.8/site-packages/ to pythonpath.
+INFO:qcloud_cos.cos_client:generate built-in connection pool success. maxsize=10,10
+ftfy or spacy is not installed using BERT BasicTokenizer instead of ftfy.
+WSGI app 0 (mountpoint='') ready in 7 seconds on interpreter 0x24de710 pid: 1217408 (default app)
+mountpoint  already configured. skip.
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1217408)
+spawned uWSGI worker 1 (pid: 1217517, cores: 30)
+spawned uWSGI worker 2 (pid: 1217553, cores: 30)
+spawned uWSGI worker 3 (pid: 1217589, cores: 30)
+spawned uWSGI worker 4 (pid: 1217625, cores: 30)
+spawned uWSGI worker 5 (pid: 1217661, cores: 30)
+*** Stats server enabled on 127.0.0.1:9191 fd: 23 ***
+  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [00:02<01:02,  2.15s/it]  7%|▋         | 2/30 [00:03<00:40,  1.46s/it] 10%|█         | 3/30 [00:04<00:33,  1.24s/it] 13%|█▎        | 4/30 [00:05<00:30,  1.16s/it] 17%|█▋        | 5/30 [00:06<00:27,  1.10s/it] 20%|██        | 6/30 [00:07<00:25,  1.06s/it] 23%|██▎       | 7/30 [00:08<00:23,  1.04s/it] 27%|██▋       | 8/30 [00:09<00:22,  1.02s/it] 30%|███       | 9/30 [00:10<00:21,  1.01s/it] 33%|███▎      | 10/30 [00:11<00:19,  1.00it/s] 37%|███▋      | 11/30 [00:12<00:18,  1.01it/s] 40%|████      | 12/30 [00:12<00:17,  1.01it/s] 43%|████▎     | 13/30 [00:13<00:16,  1.01it/s] 47%|████▋     | 14/30 [00:15<00:15,  1.00it/s] 50%|█████     | 15/30 [00:15<00:14,  1.01it/s] 53%|█████▎    | 16/30 [00:16<00:13,  1.01it/s] 57%|█████▋    | 17/30 [00:17<00:12,  1.01it/s] 60%|██████    | 18/30 [00:18<00:11,  1.01it/s] 63%|██████▎   | 19/30 [00:19<00:10,  1.02it/s] 67%|██████▋   | 20/30 [00:20<00:09,  1.02it/s] 70%|███████   | 21/30 [00:21<00:08,  1.02it/s] 73%|███████▎  | 22/30 [00:22<00:07,  1.02it/s] 77%|███████▋  | 23/30 [00:23<00:06,  1.02it/s] 80%|████████  | 24/30 [00:24<00:05,  1.01it/s] 83%|████████▎ | 25/30 [00:25<00:04,  1.00it/s] 87%|████████▋ | 26/30 [00:26<00:04,  1.00s/it] 90%|█████████ | 27/30 [00:27<00:02,  1.00it/s] 93%|█████████▎| 28/30 [00:28<00:01,  1.01it/s] 97%|█████████▋| 29/30 [00:29<00:00,  1.01it/s]100%|██████████| 30/30 [00:30<00:00,  1.02it/s]100%|██████████| 30/30 [00:30<00:00,  1.03s/it]
+INFO:qcloud_cos.cos_client:put object, url=:https://20230312-1312414016.cos.ap-guangzhou.myqcloud.com/319213327d1a19d915b91a91b38c4639 ,headers=:{'Content-Type': 'image/png; charset=utf-8'}
+https://20230312-1312414016.cos.ap-guangzhou.myqcloud.com/319213327d1a19d915b91a91b38c4639
+[pid: 1217661|app: 0|req: 1/1] 49.7.199.214 () {42 vars in 715 bytes} [Mon Mar 20 02:09:34 2023] POST /txt2img => generated 203 bytes in 32436 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 1)
+  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [00:03<01:41,  3.51s/it]  7%|▋         | 2/30 [00:05<01:08,  2.43s/it] 10%|█         | 3/30 [00:06<00:56,  2.08s/it] 13%|█▎        | 4/30 [00:08<00:49,  1.91s/it] 17%|█▋        | 5/30 [00:10<00:45,  1.80s/it] 20%|██        | 6/30 [00:11<00:41,  1.75s/it] 23%|██▎       | 7/30 [00:13<00:39,  1.70s/it] 27%|██▋       | 8/30 [00:14<00:36,  1.65s/it] 30%|███       | 9/30 [00:16<00:33,  1.61s/it] 33%|███▎      | 10/30 [00:17<00:31,  1.58s/it] 37%|███▋      | 11/30 [00:19<00:29,  1.56s/it] 40%|████      | 12/30 [00:20<00:27,  1.55s/it] 43%|████▎     | 13/30 [00:22<00:26,  1.53s/it] 47%|████▋     | 14/30 [00:23<00:24,  1.51s/it] 50%|█████     | 15/30 [00:25<00:22,  1.49s/it] 53%|█████▎    | 16/30 [00:26<00:19,  1.42s/it] 57%|█████▋    | 17/30 [00:27<00:18,  1.40s/it] 60%|██████    | 18/30 [00:29<00:16,  1.41s/it] 63%|██████▎   | 19/30 [00:30<00:15,  1.44s/it] 67%|██████▋   | 20/30 [00:32<00:14,  1.45s/it] 70%|███████   | 21/30 [00:33<00:13,  1.46s/it] 73%|███████▎  | 22/30 [00:35<00:11,  1.47s/it] 77%|███████▋  | 23/30 [00:36<00:10,  1.49s/it] 80%|████████  | 24/30 [00:38<00:08,  1.47s/it] 83%|████████▎ | 25/30 [00:39<00:07,  1.47s/it] 87%|████████▋ | 26/30 [00:41<00:05,  1.49s/it] 90%|█████████ | 27/30 [00:42<00:04,  1.52s/it] 93%|█████████▎| 28/30 [00:44<00:03,  1.53s/it] 97%|█████████▋| 29/30 [00:46<00:01,  1.54s/it]100%|██████████| 30/30 [00:47<00:00,  1.54s/it]100%|██████████| 30/30 [00:47<00:00,  1.59s/it]
+INFO:qcloud_cos.cos_client:put object, url=:https://20230312-1312414016.cos.ap-guangzhou.myqcloud.com/ac07df77bfdd7773034971f9e4bdac95 ,headers=:{'Content-Type': 'image/png; charset=utf-8'}
+https://20230312-1312414016.cos.ap-guangzhou.myqcloud.com/ac07df77bfdd7773034971f9e4bdac95
+[pid: 1217661|app: 0|req: 2/2] 49.7.199.164 () {42 vars in 860 bytes} [Mon Mar 20 02:10:20 2023] POST /txt2img => generated 203 bytes in 49743 msecs (HTTP/1.1 200) 2 headers in 72 bytes (1 switches on core 2)
+[pid: 1217661|app: 0|req: 3/3] 217.182.169.71 () {40 vars in 566 bytes} [Mon Mar 20 02:17:55 2023] GET / => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 23)
+[pid: 1217661|app: 0|req: 4/4] 179.43.177.242 () {30 vars in 339 bytes} [Mon Mar 20 02:26:10 2023] GET / => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 4)
+[pid: 1217661|app: 0|req: 5/5] 45.128.232.112 () {40 vars in 627 bytes} [Mon Mar 20 03:34:45 2023] GET / => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 27)
+[pid: 1217661|app: 0|req: 6/6] 172.104.166.147 () {32 vars in 437 bytes} [Mon Mar 20 03:47:32 2023] GET /pKn3 => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 1217661|app: 0|req: 7/7] 172.104.166.147 () {32 vars in 437 bytes} [Mon Mar 20 03:47:33 2023] GET /C5up => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 6)
+[pid: 1217661|app: 0|req: 8/8] 217.182.169.71 () {40 vars in 566 bytes} [Mon Mar 20 04:00:14 2023] GET / => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 7)
+[pid: 1217661|app: 0|req: 9/9] 45.128.232.112 () {40 vars in 566 bytes} [Mon Mar 20 04:33:09 2023] GET / => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 8)
+[pid: 1217661|app: 0|req: 10/10] 203.57.230.0 () {36 vars in 461 bytes} [Mon Mar 20 04:47:52 2023] GET / => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 9)
+[pid: 1217661|app: 0|req: 11/11] 193.32.162.159 () {44 vars in 779 bytes} [Mon Mar 20 04:57:35 2023] GET / => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 10)
+[pid: 1217661|app: 0|req: 12/12] 45.128.232.112 () {40 vars in 566 bytes} [Mon Mar 20 05:06:22 2023] GET / => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 11)
+[pid: 1217661|app: 0|req: 13/13] 114.36.37.53 () {36 vars in 559 bytes} [Mon Mar 20 06:43:36 2023] GET / => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 12)
+[pid: 1217661|app: 0|req: 14/14] 3.9.164.209 () {34 vars in 446 bytes} [Mon Mar 20 07:24:48 2023] GET /favicon.ico => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 13)
+[pid: 1217661|app: 0|req: 15/15] 193.32.162.159 () {44 vars in 779 bytes} [Mon Mar 20 07:33:48 2023] GET / => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 14)
+[pid: 1217661|app: 0|req: 16/16] 179.43.177.242 () {30 vars in 339 bytes} [Mon Mar 20 07:55:12 2023] GET / => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 15)
+[pid: 1217661|app: 0|req: 17/17] 167.248.133.50 () {28 vars in 309 bytes} [Mon Mar 20 08:04:31 2023] GET / => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 16)
+[pid: 1217661|app: 0|req: 18/18] 167.248.133.50 () {34 vars in 441 bytes} [Mon Mar 20 08:04:31 2023] GET / => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 17)
+[pid: 1217661|app: 0|req: 19/19] 193.32.162.159 () {44 vars in 779 bytes} [Mon Mar 20 08:57:36 2023] GET / => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 18)
+[pid: 1217661|app: 0|req: 20/20] 35.87.128.161 () {34 vars in 497 bytes} [Mon Mar 20 09:39:08 2023] GET / => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 19)
+[pid: 1217661|app: 0|req: 21/21] 91.132.167.165 () {40 vars in 566 bytes} [Mon Mar 20 10:02:10 2023] GET / => generated 207 bytes in 0 msecs (HTTP/1.1 404) 2 headers in 87 bytes (1 switches on core 20)
