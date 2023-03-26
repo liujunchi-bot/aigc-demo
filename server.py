@@ -4,12 +4,14 @@ import inspect
 import json
 import flask
 import sys
+import os
 import base64
 from PIL import Image
 from io import BytesIO
 
 import torch
 import diffusers
+import multiprocessing as mp
 
 from service import cos
 
@@ -31,19 +33,24 @@ def pil_to_b64(input):
     return output
 
 def b64_to_pil(input):
-    output = Image.open( BytesIO( base64.b64decode( input ) ) )
+    output = Image.open( BytesIO( base64.b64decode( input ) ) ).convert("RGB")
+    output = output.resize((512, 512)).convert("RGB")
     return output
 
 def get_compute_platform(context):
     try:
         import torch
         if torch.cuda.is_available():
+            print('cuda')
             return 'cuda'
         elif torch.backends.mps.is_available() and context == 'engine':
+            print('mps')
             return 'mps'
         else:
+            print('cpu')
             return 'cpu'
     except ImportError:
+        print('error')
         return 'cpu'
 
 ##################################################
@@ -60,7 +67,7 @@ class EngineStableDiffusion(Engine):
     def __init__(self, pipe, sibling=None, custom_model_path=None, requires_safety_checker=True):
         super().__init__()
         if sibling == None:
-            self.engine = pipe.from_pretrained( './stable-diffusion-v1-5' )
+            self.engine = pipe.from_pretrained( '../disk1/stable-diffusion-2' )
         elif custom_model_path:
             if requires_safety_checker:
                 self.engine = diffusers.StableDiffusionPipeline.from_pretrained(custom_model_path,
@@ -83,7 +90,8 @@ class EngineStableDiffusion(Engine):
 
     def process(self, kwargs):
         output = self.engine( **kwargs )
-        return {'image': output.images[0], 'nsfw':output.nsfw_content_detected[0]}
+        print(output)
+        return {'images': output.images}
 
 class EngineManager(object):
     def __init__(self):
@@ -121,6 +129,8 @@ if (hf_token == None):
     sys.exit('No Hugging Face token found in config.json.')
 
 custom_models = config['custom_models'] if 'custom_models' in config else []
+
+# os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
 
 # Initialize app:
 app = flask.Flask( __name__ )
@@ -200,9 +210,14 @@ def _generate(task, engine=None):
                 args_dict[ 'height' ] = retrieve_param( 'height', flask.request.form, int,   512 )
             if (task == 'img2img' or task == 'masking'):
                 init_img_b64 = flask.request.form[ 'init_image' ]
-                init_img_b64 = re.sub( '^data:image/png;base64,', '', init_img_b64 )
+                init_img_b64 = re.sub( '^data:image/.*;base64,', '', init_img_b64 )
                 init_img_pil = b64_to_pil( init_img_b64 )
-                args_dict[ 'init_image' ] = init_img_pil
+                print(type(init_img_pil))
+                print(init_img_pil.format)
+                # print(init_img_b64)
+                print(type(init_img_b64))
+                #init_img_pil = Image.open(BytesIO(init_img_b64)).resize((512,512))
+                args_dict[ 'image' ] = init_img_pil
                 args_dict[ 'strength' ] = retrieve_param( 'strength', flask.request.form, float, 0.7 )
             if (task == 'masking'):
                 mask_img_b64 = flask.request.form[ 'mask_image' ]
@@ -217,14 +232,13 @@ def _generate(task, engine=None):
         output_data[ 'status' ] = 'success'
         images = []
         for result in total_results:
-            imgBase64 = pil_to_b64( result['image'].convert( 'RGB' ) )
+            imgBase64 = pil_to_b64( result['images'][0].convert( 'RGB' ) )
             imgByte = base64.b64decode(imgBase64)
             url = cos.upload_to_cos(imgByte)
             aigcRes = {
                 'image_url':url,
                 'seed' : result['seed'],
-                'mime_type': 'image/png',
-                'nsfw': result['nsfw']
+                'mime_type': 'image/png'
             }
             images.append(aigcRes)
         output_data[ 'images' ] = images        
@@ -235,4 +249,5 @@ def _generate(task, engine=None):
     return flask.jsonify( output_data )
 
 if __name__ == '__main__':
+    mp.set_start_method('spawn')
     app.run( host='0.0.0.0', port=1337, debug=False )
